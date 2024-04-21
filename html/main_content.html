@@ -1,0 +1,23 @@
+<br><br>
+<div class="container bg-light mt-3 rounded border border-dark">
+    <div class="row">
+        <div class="col mb-4 mt-4">
+            <input type="text" class="form-control" id="departure" placeholder="Miejsce wyjazdu" required>
+        </div>
+        <div class="col mb-4 mt-4">
+            <input type="text" class="form-control" id="destination" placeholder="Miejsce docelowe" required>
+        </div>
+        <div class="col mb-4 mt-4">
+            <input type="date" class="form-control" id="date" required>
+        </div>
+        <div class="col mb-3 mt-3">
+            <input type="range" class="form-range" id="passengers" placeholder="Liczba pasażerów" min="1" max="8" value="1" onchange="liczba_pasazerow_slider()" required>
+            <span id="IO_spn_liczba_pasazerow">Liczba pasażerów: 1</span>
+        </div>
+        <div class="col mb-3 mt-4 d-flex justify-content-end">
+            <a href="search_results.html">
+                <img src="../images/icons/IO_search.png" alt="Search" width="35">
+            </a>
+        </div>
+    </div>
+</div>
