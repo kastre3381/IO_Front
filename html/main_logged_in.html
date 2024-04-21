@@ -19,16 +19,32 @@
             </a>
     
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li> <img src="../images/icons/IO_icon.svg" class="img-fluid img-thumbnail" alt="Logo" style="width: 80px; height: auto;"></li>
-              <li><a href="#" class="nav-link px-2 text-white">Strona domowa</a></li>
+              <li>
+                <a href="#" class="nav-link px-2 text-white">
+                  <img src="../images/icons/IO_icon.svg" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
+                  Strona domowa
+                </a>
+              </li>
               <!-- <li> <img src="../images/icons/IO_search.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 80px; height: auto;"></li>
               <li><a href="/html/search.html" class="nav-link px-2 text-white">Szukaj</a></li> -->
-              <li> <img src="../images/icons/IO_add.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 80px; height: auto;"></li>
-              <li><a href="/dodaj_przejazd" class="nav-link px-2 text-white">Dodaj przejazd</a></li>
-              <li> <img src="../images/icons/IO_faq.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 80px; height: auto;"></li>
-              <li><a href="/faq" class="nav-link px-2 text-white">FAQs</a></li>
-              <li> <img src="../images/icons/IO_about.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 80px; height: auto;"></li>
-              <li><a href="about" class="nav-link px-2 text-white">O nas</a></li>
+              <li>
+                <a href="/dodaj_przejazd" class="nav-link px-2 text-white">
+                  <img src="../images/icons/IO_add.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
+                  Dodaj przejazd
+                </a>
+              </li>
+              <li>
+                <a href="/faq" class="nav-link px-2 text-white">
+                  <img src="../images/icons/IO_faq.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
+                  FAQs
+                </a>
+              </li>
+              <li>
+                <a href="about" class="nav-link px-2 text-white">
+                  <img src="../images/icons/IO_about.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
+                  O nas
+                </a>
+              </li>
             </ul>
     
     
@@ -47,26 +63,31 @@
             </div>
         </div>
         
-        <div class="container bg-light mt-3">
+        <div class="container bg-light mt-3 rounded border border-dark">
           <div class="row">
-              <div class="col mb-3 mt-3">
+              <div class="col mb-4 mt-4">
                   <input type="text" class="form-control" id="departure" placeholder="Miejsce wyjazdu" required>
               </div>
-              <div class="col mb-3 mt-3">
+              <div class="col mb-4 mt-4">
                   <input type="text" class="form-control" id="destination" placeholder="Miejsce docelowe" required>
               </div>
-              <div class="col mb-3 mt-3">
+              <div class="col mb-4 mt-4">
                   <input type="date" class="form-control" id="date" required>
               </div>
               <div class="col mb-3 mt-3">
-                  <input type="number" class="form-control" id="passengers" placeholder="Liczba pasażerów" min="1" required>
+                  <input type="range" class="form-range" id="passengers" placeholder="Liczba pasażerów" min="1" max="8" value="1" onchange="liczba_pasazerow_slider()" required>
+                  <span id="IO_spn_liczba_pasazerow">Liczba pasażerów: 1</span>
               </div>
-              <div class="col mb-3 d-flex align-items-end">
+              <div class="col mb-3 mt-4 d-flex justify-content-end">
                 <a href="search_results.html">
                   <img src="../images/icons/IO_search.png" alt="Search" width="35">
                 </a>
               </div>
           </div>
+
+
+
+
 
           <div class="row d-flex justify-content-center footer fixed-bottom">
             <div class="col-auto">
@@ -95,5 +116,6 @@
               <span class="text-white fw-bold">© 2024 Copyright: IO TEAM 1</span>
             </div>
           </div>
+      <script src="../js/main.js"></script>
     </body>
 </html>
