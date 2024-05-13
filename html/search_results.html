@@ -125,7 +125,7 @@
                                 <input type="number" class="form-control" id="passengers" placeholder="Liczba pasażerów" min="1" required>
                             </div>
                             <div class="col mb-3 d-flex align-items-end" style="margin-right: -180px;">
-                                <button type="submit" class="btn btn-primary">Szukaj</button>
+                                <button type="submit" class="btn btn-primary" onclick="fetchRideInfo()">Szukaj</button>
                             </div>
                         </div>
                     </div>
@@ -168,10 +168,10 @@
                         <td class="number text-center">1</td>
                         <td class="image"><img src="https://www.bootdey.com/image/100x100/FF8C00" alt=""></td>
                         <td class="product"><strong>Przejazd 1</strong><br>To jest opis.</td>
-                        <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></td>
+                        <td class="rate text-right"><span>${getStars(ride.rating)}</span></td>
                         <td class="price text-right">$350</td>
                         <td class="action text-right" style="position: relative;">
-                            <a href="#" class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px">Zarezerwuj</a>
+                          <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
                         </td>
                         </tr>
                         <tr>
@@ -181,7 +181,7 @@
                         <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></span></td>
                         <td class="price text-right">$1,050</td>
                         <td class="action text-right" style="position: relative;">
-                            <a href="#" class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px">Zarezerwuj</a>
+                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
                         </td>
                         </tr>
                         <tr>
@@ -191,7 +191,7 @@
                         <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></span></td>
                         <td class="price text-right">$550</td>
                         <td class="action text-right" style="position: relative;">
-                            <a href="#" class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px">Zarezerwuj</a>
+                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
                         </td>
                         </tr>
                         <tr>
@@ -201,7 +201,7 @@
                         <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span></td>
                         <td class="price text-right">$330</td>
                         <td class="action text-right" style="position: relative;">
-                            <a href="#" class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px">Zarezerwuj</a>
+                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
                         </td>
                         </tr>
                         <tr>
@@ -211,7 +211,7 @@
                         <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></td>
                         <td class="price text-right">$540</td>
                         <td class="action text-right" style="position: relative;">
-                            <a href="#" class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px">Zarezerwuj</a>
+                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
                         </td>
                         </tr>
                         <tr>
@@ -221,7 +221,7 @@
                         <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></td>
                         <td class="price text-right">$870</td>
                         <td class="action text-right" style="position: relative;">
-                            <a href="#" class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px">Zarezerwuj</a>
+                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
                         </td>
                         </tr>
                         <tr>
@@ -231,7 +231,7 @@
                         <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></span></td>
                         <td class="price text-right">$620</td>
                         <td class="action text-right" style="position: relative;">
-                            <a href="#" class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px">Zarezerwuj</a>
+                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
                         </td>
                         </tr>
                         <tr>
@@ -241,7 +241,7 @@
                         <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></td>
                         <td class="price text-right">$1,550</td>
                         <td class="action text-right" style="position: relative;">
-                            <a href="#" class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px">Zarezerwuj</a>
+                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
                         </td>
                         </tr>
                     </tbody></table>
