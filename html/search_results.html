@@ -8,10 +8,10 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <title>Strona główna</title>
+        <title>Wyszukiwanie przejazdów</title>
         <link rel="icon" href="../images/icons/IO_icon.svg" type="image/x-icon"/>
     </head>
-    <body class="bg-dark container-fluid" >
+    <body class="bg-dark container-fluid text-white" >
         <br>
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
@@ -27,12 +27,6 @@
                 <a href="/dodaj_przejazd" class="nav-link px-2 text-white">
                   <img src="../images/icons/IO_add.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
                   Dodaj przejazd
-                </a>
-              </li>
-              <li>
-                <a href="/faq" class="nav-link px-2 text-white">
-                  <img src="../images/icons/IO_faq.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
-                  FAQs
                 </a>
               </li>
               <li>
@@ -52,8 +46,8 @@
                   Konto
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="/info">Moje informacje</a>
-                  <a class="dropdown-item" href="/ustawienia">Ustawienia</a>
+                  <button class="dropdown-item" onclick="fetchMyInfo()">Moje informacje</button>
+                  <button class="dropdown-item" onclick="fetchSettings()">Ustawienia</button>
                 </div>
               </div>
             </div>
@@ -130,13 +124,13 @@
                             <div class="col mb-3 mt-3">
                                 <input type="number" class="form-control" id="passengers" placeholder="Liczba pasażerów" min="1" required>
                             </div>
-                            <div class="col mb-3 d-flex align-items-end">
+                            <div class="col mb-3 d-flex align-items-end" style="margin-right: -180px;">
                                 <button type="submit" class="btn btn-primary">Szukaj</button>
                             </div>
                         </div>
                     </div>
                     <!-- END SEARCH INPUT -->
-                    <p>Showing all results matching ""</p>
+                    <br>
                     
                     <div class="padding"></div>
                     
@@ -157,6 +151,7 @@
                     </div>
                     <!-- END ORDER RESULT -->
                     
+                
                     <div class="col-md-6 text-right">
                         <div class="btn-group">
                         <button type="button" class="btn btn-default active"><i class="fa fa-list"></i></button>
@@ -165,6 +160,7 @@
                     </div>
                     </div>
                     
+                    <br>
                     <!-- BEGIN TABLE RESULT -->
                     <div class="table-responsive">
                     <table class="table table-hover">
