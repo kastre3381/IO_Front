@@ -110,7 +110,7 @@
                     <h2><i class="fa fa-file-o"></i> Result</h2>
                     <hr>
                     <!-- BEGIN SEARCH INPUT -->
-                    <div class="container bg-light mt-3">
+                    <div class="container bg-light mt-3 rounded" style="width: 55vw;">
                         <div class="row">
                             <div class="col mb-3 mt-3">
                                 <input type="text" class="form-control" id="departure" placeholder="Miejsce wyjazdu" required>
@@ -124,7 +124,7 @@
                             <div class="col mb-3 mt-3">
                                 <input type="number" class="form-control" id="passengers" placeholder="Liczba pasażerów" min="1" required>
                             </div>
-                            <div class="col mb-3 d-flex align-items-end" style="margin-right: -180px;">
+                            <div class="col mb-3 d-flex align-items-end" style="margin-right: -100px;">
                                 <button type="submit" class="btn btn-primary" onclick="fetchRideInfo()">Szukaj</button>
                             </div>
                         </div>
@@ -138,8 +138,8 @@
                     <!-- BEGIN ORDER RESULT -->
                     <div class="col-sm-6">
                         <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="color: white;">
-                            Order by <span class="caret"></span>
+                        <button type="button" class="btn btn-default dropdown-toggle text-dark" data-toggle="dropdown" style="color: white;">
+                            Sortuj względem &nbsp;
                         </button>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Name</a></li>
