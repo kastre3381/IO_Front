@@ -16,7 +16,7 @@
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li>
-                <a href="main.html" class="nav-link px-2 text-white">
+                <a href="/main" class="nav-link px-2 text-white">
                   <img src="../images/icons/IO_icon.svg" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
                   Strona domowa
                 </a>
@@ -24,13 +24,13 @@
               <!-- <li> <img src="../images/icons/IO_search.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 80px; height: auto;"></li>
               <li><a href="/html/search.html" class="nav-link px-2 text-white">Szukaj</a></li> -->
               <li>
-                <a href="/wyszukaj_przejazd" class="nav-link px-2 text-white">
+                <a href="/search" class="nav-link px-2 text-white">
                   <img src="../images/icons/IO_add.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
                   Wyszukaj przejazd
                 </a>
               </li>
               <li>
-                <a href="about" class="nav-link px-2 text-white">
+                <a href="/about" class="nav-link px-2 text-white">
                   <img src="../images/icons/IO_about.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
                   O nas
                 </a>
@@ -39,7 +39,7 @@
     
     
             <div class="text-end">
-              <button type="button" class="btn btn-outline-light me-2">Wyloguj się</button>
+              <button type="button" class="btn btn-outline-light me-2" onclick="logout()">Wyloguj się</button>
               <img src="../images/icons/profile_picture.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 80px; height: auto;" id="IO_img_user_profile_image"></li>
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,9 +107,10 @@
                 <!-- END FILTERS -->
                 <!-- BEGIN RESULT -->
                 <div class="col-md-9">
-                    <h2><i class="fa fa-file-o"></i> Result</h2>
+                    <h2>&#128269; Wyniki</h2>
                     <hr>
                     <!-- BEGIN SEARCH INPUT -->
+                    <form method="POST" action="/searchform">
                     <div class="container bg-light mt-3 rounded" style="width: 55vw;">
                         <div class="row">
                             <div class="col mb-3 mt-3">
@@ -125,10 +126,11 @@
                                 <input type="number" class="form-control" id="passengers" placeholder="Liczba pasażerów" min="1" required>
                             </div>
                             <div class="col mb-3 d-flex align-items-end" style="margin-right: -100px;">
-                                <button type="submit" class="btn btn-primary" onclick="fetchRideInfo()">Szukaj</button>
+                                <button type="submit" class="btn btn-primary">Szukaj</button>
                             </div>
                         </div>
                     </div>
+                  </form>
                     <!-- END SEARCH INPUT -->
                     <br>
                     
@@ -295,5 +297,6 @@
         </div>
       </div>
         <script src="../js/main.js"></script>
+        <script src="../js/add_ride.js"></script>
     </body>
     </html>

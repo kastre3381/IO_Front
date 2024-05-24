@@ -16,13 +16,13 @@
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li>
-            <a href="main.html" class="nav-link px-2 text-white">
+            <a href="/main" class="nav-link px-2 text-white">
               <img src="../images/icons/IO_icon.svg" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
               Strona domowa
             </a>
           </li>
           <li>
-            <a href="/wyszukaj_przejazd" class="nav-link px-2 text-white">
+            <a href="/search" class="nav-link px-2 text-white">
               <img src="../images/icons/IO_add.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
               Wyszukaj przejazd
             </a>
@@ -37,8 +37,8 @@
 
 
         <div class="text-end">
-          <a href="login.html" class="btn btn-outline-light me-2">Zaloguj się</a>
-          <a href="register.html" class="btn btn-warning">Utwórz konto</a>
+          <a href="/login" class="btn btn-outline-light me-2">Zaloguj się</a>
+          <a href="/register" class="btn btn-warning">Utwórz konto</a>
         </div>
         </div>
     </div>
@@ -46,7 +46,8 @@
     
     <br><br>
     <div class="container bg-light mt-3 rounded border border-dark">
-        <div class="row">
+      <form method="POST" action="/searchform">
+      <div class="row">
             <div class="col mb-4 mt-4">
                 <input type="text" class="form-control" id="departure" placeholder="Miejsce wyjazdu" required>
             </div>
@@ -66,6 +67,7 @@
                 </a>
             </div>
         </div>
+      </form>   
     </div>
 
     <br><br>
@@ -102,5 +104,6 @@
       </div>
     </div>
       <script src="../js/main.js"></script>
+      <script src="../js/add_ride.js"></script>
   </body>
   </html>
