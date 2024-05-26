@@ -49,22 +49,139 @@
       <form method="POST" action="/searchform">
       <div class="row">
             <div class="col mb-4 mt-4">
-                <input type="text" class="form-control" id="departure" placeholder="Miejsce wyjazdu" required>
+              <div class="form-group">
+                <label for="search" class="form-label">Miejsce startowe</label>
+                <input type="text" class="form-control" id="IO_main_start" placeholder="Wpisz, aby wyszukać">
+              </div>
+              <div class="form-group">
+                  <select multiple class="form-control" id="depature" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz punkt startowy')">
+                  <option value="Warszawa">Warszawa</option>
+                  <option value="Kraków">Kraków</option>
+                  <option value="Łódź">Łódź</option>
+                  <option value="Wrocław">Wrocław</option>
+                  <option value="Poznań">Poznań</option>
+                  <option value="Gdańsk">Gdańsk</option>
+                  <option value="Szczecin">Szczecin</option> 
+                  <option value="Bydgoszcz">Bydgoszcz</option>
+                  <option value="Lublin">Lublin</option>
+                  <option value="Białystok">Białystok</option>
+                  <option value="Katowice">Katowice</option>
+                  <option value="Gdynia">Gdynia</option>
+                  <option value="Częstochowa">Częstochowa</option>
+                  <option value="Radom">Radom</option>
+                  <option value="Sosnowiec">Sosnowiec</option>
+                  <option value="Toruń">Toruń</option>
+                  <option value="Kielce">Kielce</option>
+                  <option value="Gliwice">Gliwice</option>
+                  <option value="Zabrze">Zabrze</option>
+                  <option value="Olsztyn">Olsztyn</option>
+                  <option value="Bielsko-Biała">Bielsko-Biała</option>
+                  <option value="Rzeszów">Rzeszów</option>
+                  <option value="Ruda Śląska">Ruda Śląska</option>
+                  <option value="Rybnik">Rybnik</option>
+                  <option value="Tychy">Tychy</option>
+                  <option value="Opole">Opole</option>
+                  <option value="Elbląg">Elbląg</option>
+                  <option value="Gorzów Wielkopolski">Gorzów Wielkopolski</option>
+                  <option value="Dąbrowa Górnicza">Dąbrowa Górnicza</option>
+                  <option value="Płock">Płock</option>
+                  <option value="Wałbrzych">Wałbrzych</option>
+                  <option value="Włocławek">Włocławek</option>
+                  <option value="Tarnów">Tarnów</option>
+                  <option value="Chorzów">Chorzów</option>
+                  <option value="Koszalin">Koszalin</option>
+                  <option value="Kalisz">Kalisz</option>
+                  <option value="Legnica">Legnica</option>
+                  <option value="Grudziądz">Grudziądz</option>
+                  <option value="Słupsk">Słupsk</option>
+                  <option value="Jaworzno">Jaworzno</option>
+                  <option value="Jastrzębie-Zdrój">Jastrzębie-Zdrój</option>
+                  <option value="Nowy Sącz">Nowy Sącz</option>
+                  <option value="Jelenia Góra">Jelenia Góra</option>
+                  <option value="Siedlce">Siedlce</option>
+                  <option value="Mysłowice">Mysłowice</option>
+                  <option value="Konin">Konin</option>
+                  <option value="Piotrków Trybunalski">Piotrków Trybunalski</option>
+                  <option value="Inowrocław">Inowrocław</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="col  mb-4 mt-4">
+            <div class="form-group">
+              <label for="search" class="form-label">Miejsce docelowe</label>
+              <input type="text" class="form-control" id="IO_main_end" placeholder="Wpisz, aby wyszukać">
+          </div>
+            <div class="form-group">
+                <select multiple class="form-control" id="destination" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz punkt startowy')">
+                <option value="Warszawa">Warszawa</option>
+                <option value="Kraków">Kraków</option>
+                <option value="Łódź">Łódź</option>
+                <option value="Wrocław">Wrocław</option>
+                <option value="Poznań">Poznań</option>
+                <option value="Gdańsk">Gdańsk</option>
+                <option value="Szczecin">Szczecin</option>
+                <option value="Bydgoszcz">Bydgoszcz</option>
+                <option value="Lublin">Lublin</option>
+                <option value="Białystok">Białystok</option>
+                <option value="Katowice">Katowice</option>
+                <option value="Gdynia">Gdynia</option>
+                <option value="Częstochowa">Częstochowa</option>
+                <option value="Radom">Radom</option>
+                <option value="Sosnowiec">Sosnowiec</option>
+                <option value="Toruń">Toruń</option>
+                <option value="Kielce">Kielce</option>
+                <option value="Gliwice">Gliwice</option>
+                <option value="Zabrze">Zabrze</option>
+                <option value="Olsztyn">Olsztyn</option>
+                <option value="Bielsko-Biała">Bielsko-Biała</option>
+                <option value="Rzeszów">Rzeszów</option>
+                <option value="Ruda Śląska">Ruda Śląska</option>
+                <option value="Rybnik">Rybnik</option>
+                <option value="Tychy">Tychy</option>
+                <option value="Opole">Opole</option>
+                <option value="Elbląg">Elbląg</option>
+                <option value="Gorzów Wielkopolski">Gorzów Wielkopolski</option>
+                <option value="Dąbrowa Górnicza">Dąbrowa Górnicza</option>
+                <option value="Płock">Płock</option>
+                <option value="Wałbrzych">Wałbrzych</option>
+                <option value="Włocławek">Włocławek</option>
+                <option value="Tarnów">Tarnów</option>
+                <option value="Chorzów">Chorzów</option>
+                <option value="Koszalin">Koszalin</option>
+                <option value="Kalisz">Kalisz</option>
+                <option value="Legnica">Legnica</option>
+                <option value="Grudziądz">Grudziądz</option>
+                <option value="Słupsk">Słupsk</option>
+                <option value="Jaworzno">Jaworzno</option>
+                <option value="Jastrzębie-Zdrój">Jastrzębie-Zdrój</option>
+                <option value="Nowy Sącz">Nowy Sącz</option>
+                <option value="Jelenia Góra">Jelenia Góra</option>
+                <option value="Siedlce">Siedlce</option>
+                <option value="Mysłowice">Mysłowice</option>
+                <option value="Konin">Konin</option>
+                <option value="Piotrków Trybunalski">Piotrków Trybunalski</option>
+                <option value="Inowrocław">Inowrocław</option>
+                </select>
             </div>
+        </div>
+
+        <div class="col mb-4 mt-4">
+          <label for="date" class="form-label">Dzień wyjazdu</label>
+          <input type="date" class="form-control" id="date" min="" required>
+      </div>
+      <div class="col mb-4 mt-4">
+          <label for="time" class="form-label">Godzina wyjazdu</label>
+          <input type="time" class="form-control" id="time" min="" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz późniejszą godzinę')">
+      </div>
             <div class="col mb-4 mt-4">
-                <input type="text" class="form-control" id="destination" placeholder="Miejsce docelowe" required>
-            </div>
-            <div class="col mb-4 mt-4">
-                <input type="date" class="form-control" id="date" required>
-            </div>
-            <div class="col mb-3 mt-3">
                 <input type="range" class="form-range" id="passengers" placeholder="Liczba pasażerów" min="1" max="8" value="1" onchange="liczba_pasazerow_slider()" required>
                 <span id="IO_spn_liczba_pasazerow">Liczba pasażerów: 1</span>
             </div>
             <div class="col mb-3 mt-4 d-flex justify-content-end">
-                <a href="search_results.html">
-                    <img src="../images/icons/IO_search.png" alt="Search" width="35">
-                </a>
+                <button type="submit">
+                    <img src="../images/icons/IO_search.png" alt="Search" width="35" style="margin-top: 50%;">
+                </button>
             </div>
         </div>
       </form>   
@@ -104,6 +221,6 @@
       </div>
     </div>
       <script src="../js/main.js"></script>
-      <script src="../js/add_ride.js"></script>
+      <script src="../js/search_or_add_ride.js"></script>
   </body>
   </html>

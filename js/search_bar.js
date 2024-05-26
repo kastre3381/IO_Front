@@ -9,5 +9,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const minDate = `${year}-${month}-${day}`;
 
     // Ustaw dzisiejszą datę jako minimalną do wyboru
-    document.getElementById('IO_add_ride_date').setAttribute('min', minDate);
+    document.getElementById('IO_date').setAttribute('min', minDate);
 });

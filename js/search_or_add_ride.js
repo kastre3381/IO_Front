@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const minTime = `${hour}:${minute}`;
 
     // Ustaw dzisiejszą datę jako minimalną do wyboru
-    document.getElementById('IO_add_ride_date').setAttribute('min', minDate);
+    document.getElementById('date').setAttribute('min', minDate);
     // Ustaw aktualną godzinę jako minimalną do wyboru
-    document.getElementById('IO_add_ride_time').setAttribute('min', minTime);
+    document.getElementById('time').setAttribute('min', minTime);
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const searchInput1 = document.getElementById('IO_add_ride_start');
-    const select1 = document.getElementById('select1');
+    const searchInput1 = document.getElementById('IO_start');
+    const select1 = document.getElementById('depature');
     const options1 = Array.from(select1.options);
 
     searchInput1.addEventListener('input', () => {
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 
-    const searchInput = document.getElementById('IO_add_ride_end');
-    const select = document.getElementById('select2');
+    const searchInput = document.getElementById('IO_end');
+    const select = document.getElementById('destination');
     const options = Array.from(select.options);
 
     searchInput.addEventListener('input', () => {
