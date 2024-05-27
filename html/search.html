@@ -106,17 +106,17 @@
                 </div>
                 <!-- END FILTERS -->
                 <!-- BEGIN RESULT -->
-                <div class="col-md-9">
+                <div class="col-md-9 ">
                     <h2>&#128269; Wyniki</h2>
                     <hr>
                     <!-- BEGIN SEARCH INPUT -->
-                    <div class="container bg-light mt-3 rounded border border-dark text-dark">
+                    <div class="container bg-light mt-3 rounded border border-dark text-dark" style="width: 50vw;">
                     <form method="POST" action="/searchform">
                       <div class="row">
                         <div class="col mb-4 mt-4">
                           <div class="form-group">
                             <label for="search" class="form-label">Miejsce startowe</label>
-                            <input type="text" class="form-control" id="IO_main_start" placeholder="Wpisz, aby wyszukać">
+                            <input type="text" class="form-control" id="IO_start" placeholder="Wpisz, aby wyszukać">
                           </div>
                           <div class="form-group">
                               <select multiple class="form-control" id="depature" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz punkt startowy')">
@@ -175,7 +175,7 @@
                       <div class="col  mb-4 mt-4">
                         <div class="form-group">
                           <label for="search" class="form-label">Miejsce docelowe</label>
-                          <input type="text" class="form-control" id="IO_main_end" placeholder="Wpisz, aby wyszukać">
+                          <input type="text" class="form-control" id="IO_end" placeholder="Wpisz, aby wyszukać">
                       </div>
                         <div class="form-group">
                             <select multiple class="form-control" id="destination" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz punkt startowy')">
