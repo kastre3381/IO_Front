@@ -1,0 +1,12 @@
+/* Basic styles for the vehicle list */
+#vehiclesList li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Optional: style for the card body to ensure good contrast */
+.card-body {
+    background-color: #f9f9f9;
+}

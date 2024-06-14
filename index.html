@@ -13,40 +13,12 @@
 </head>
 <body class="bg-dark container-fluid d-flex flex-column vh-100" >
     <br>
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li>
-            <a href="/" class="nav-link px-2 text-white">
-              <img src="../images/icons/IO_icon.svg" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
-              Strona domowa
-            </a>
-          </li>
-          <li>
-            <a href="/search/" class="nav-link px-2 text-white">
-              <img src="../images/icons/IO_add.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
-              Wyszukaj przejazd
-            </a>
-          </li>
-          <li>
-            <a href="/about" class="nav-link px-2 text-white">
-              <img src="../images/icons/IO_about.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
-              O nas
-            </a>
-          </li>
-        </ul>
-
-
-        <div class="text-end">
-          <a href="/login" class="btn btn-outline-light me-2">Zaloguj się</a>
-          <a href="/register" class="btn btn-warning">Utwórz konto</a>
-        </div>
-        </div>
-    </div>
+    <div id="navbarContent"></div>
 
     
     <br><br>
     <div class="container bg-light mt-3 rounded border border-dark">
-      <form method="POST" action="searchform">
+      <form method="GET" id ="addRideForm">
       <div class="row">
             <div class="col mb-4 mt-4">
               <div class="form-group">
@@ -54,7 +26,7 @@
                 <input type="text" class="form-control" id="IO_start" placeholder="Wpisz, aby wyszukać">
               </div>
               <div class="form-group">
-                  <select multiple class="form-control" id="depature" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz punkt startowy')">
+                  <select multiple class="form-control" id="depature" >
                   <option value="Warszawa">Warszawa</option>
                   <option value="Kraków">Kraków</option>
                   <option value="Łódź">Łódź</option>
@@ -113,7 +85,7 @@
               <input type="text" class="form-control" id="IO_end" placeholder="Wpisz, aby wyszukać">
           </div>
             <div class="form-group">
-                <select multiple class="form-control" id="destination" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz punkt startowy')">
+                <select multiple class="form-control" id="destination">
                 <option value="Warszawa">Warszawa</option>
                 <option value="Kraków">Kraków</option>
                 <option value="Łódź">Łódź</option>
@@ -168,11 +140,11 @@
 
         <div class="col mb-4 mt-4">
           <label for="date" class="form-label">Dzień wyjazdu</label>
-          <input type="date" class="form-control" id="date" min="" required>
+          <input type="date" class="form-control" id="date" min="" >
       </div>
       <div class="col mb-4 mt-4">
           <label for="time" class="form-label">Godzina wyjazdu</label>
-          <input type="time" class="form-control" id="time" min="" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz późniejszą godzinę')">
+          <input type="time" class="form-control" id="time" min="" oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz późniejszą godzinę')">
       </div>
             <div class="col mb-4 mt-4">
                 <input type="range" class="form-range" id="passengers" placeholder="Liczba pasażerów" min="1" max="8" value="1" onchange="liczba_pasazerow_slider()" required>
@@ -186,7 +158,12 @@
         </div>
       </form>   
     </div>
-
+    <br><br>
+    <table class="table">
+      <tbody>
+          <!-- zawartość tbody -->
+      </tbody>
+  </table>
     <br><br>
     <div class="container-fluid text-center">
       <img src="../images/icons/car-main.gif" class="img-fluid img-thumbnail" style="height:50vh; width:au  to"/>
@@ -199,5 +176,6 @@
     </div>
       <script src="../js/main.js"></script>
       <script src="../js/search_or_add_ride.js"></script>
+      <script src="../js/search.js"></script>
   </body>
   </html>

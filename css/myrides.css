@@ -1,0 +1,27 @@
+.trip-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    align-items: center;
+}
+
+.trip-info .label {
+    font-weight: bold;
+    font-size: 1.2rem; /* Zwiększa rozmiar etykiet */
+    margin-right: 0.5rem;
+    color: black; /* Kolor etykiet */
+}
+
+.trip-info .value {
+    font-size: 1rem; /* Normalny rozmiar dla wartości */
+    color: black; /* Kolor wartości */
+}
+
+.media-body {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
