@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (addRideForm) {
         addRideForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-
+            const tableBody = document.querySelector(".table tbody");
+            tableBody.innerHTML = ""; 
             // Pobierz wartości pól formularza
             const start = document.getElementById("IO_start").value;
             const finish = document.getElementById("IO_end").value;
@@ -39,19 +40,20 @@ document.addEventListener('DOMContentLoaded', async () => {
                     const result = await response.json();
                     console.log('Result:', result.body);
                     displayTrips(result.body);
-                } else {    
+                } else if (response.status === 404) {
+                    alert('No trips found');
+                } else {
                     const error = await response.json();
+                    console.error('Error:', error);
                 }
             } catch (error) {
-                console.error('Error:', error);
+                console.error('Fetch Error:', error);
             }
         });
     } else {
         console.error('Form element not found');
     }
 });
-
-
 
 // Funkcja do wyświetlania wyników przejazdów w tabeli
 function displayTrips(trips) {
@@ -169,4 +171,3 @@ async function fetchTripById(tripID) {
         return null;
     }
 }
-

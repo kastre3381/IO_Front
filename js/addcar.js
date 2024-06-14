@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (form) {
         // Get userId from localStorage
         const userId = localStorage.getItem('userId');
-        alert(userId);
         if (!userId) {
             console.error('Brak zapamiętanego identyfikatora użytkownika.');
             return;
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         try {
             const userData = await fetchInfo(userId);
-            alert(userData);
             form.addEventListener('submit', async (event) => {
                 event.preventDefault();
 

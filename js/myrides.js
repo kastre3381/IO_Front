@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', async () => {
     // Znajdujemy przycisk po jego ID
     const showTripsButton = document.getElementById("showTripsButton");
-    const userId = localStorage.getItem('userId');
+    
 
     // Dodajemy event listener na kliknięcie przycisku
     showTripsButton.addEventListener('click', async () => {
-    
+        const userId = localStorage.getItem('userId');
+        if (!userId) {
+            console.error('User ID not found in localStorage.');
+            return;
+        }
         try {
             // Wywołujemy endpoint /v2/trip/ z odpowiednimi parametrami
             const response = await fetch(`http://localhost:9000/trip`, {
@@ -33,7 +37,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 function generateTripListHTML(trips, userId) {
     const tripList = document.getElementById('TripList');
     tripList.innerHTML = ''; // Wyczyść zawartość listy, jeśli była już wcześniej wypełniona
-    const filteredTrips = trips.body.filter(trip => trip.reserved.userId === userId);
+    const filteredTrips = trips.body.filter(trip => trip.reserved && trip.reserved.userId === userId);
     filteredTrips.forEach(trip => {
         // trips.body.forEach(trip => {
         const li = document.createElement('li');

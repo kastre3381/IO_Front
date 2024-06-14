@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         alert('Zalogowano pomyślnie!');
                         // Zapamiętaj identyfikator użytkownika w lokalnym magazynie
                         localStorage.setItem('userId', user._id);
+                        alert(localStorage.getItem('userId'));
                         alert('Zalogowano pomyślnie! Twój identyfikator użytkownika to: ' + user._id);  
                         // Przekierowanie na stronę loggedinmain.html
                         window.location.href = '../';

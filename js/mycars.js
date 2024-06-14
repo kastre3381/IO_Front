@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     showVehiclesButton.addEventListener('click', async () => {
         const userId = localStorage.getItem('userId');
-
+        localStorage.setItem('userId', userId);
         if (!userId) {
             console.error('User ID not found in localStorage.');
             return;
