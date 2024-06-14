@@ -11,10 +11,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const minTime = `${hour}:${minute}`;
 
     // Ustaw dzisiejszą datę jako minimalną do wyboru
-    document.getElementById('date').setAttribute('min', minDate);
-    // Ustaw aktualną godzinę jako minimalną do wyboru
-    document.getElementById('time').setAttribute('min', minTime);
+    const dateInput = document.getElementById('date');
+    dateInput.setAttribute('min', minDate);
+
+    const timeInput = document.getElementById('time');
+
+    // Aktualizuj minimalną godzinę tylko wtedy, gdy dzisiejsza data jest wybrana
+    dateInput.addEventListener('input', (event) => {
+        if (event.target.value === minDate) {
+            timeInput.setAttribute('min', minTime);
+        } else {
+            timeInput.removeAttribute('min');
+        }
+    });
+
+    // Ustawienie minimalnej godziny przy ładowaniu strony, jeśli dzisiejsza data jest wybrana
+    if (dateInput.value === minDate) {
+        timeInput.setAttribute('min', minTime);
+    }
 });
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const searchInput1 = document.getElementById('IO_start');
