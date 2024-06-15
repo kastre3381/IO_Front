@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     if (response.ok) {
                         const result = await response.json();
                         alert('Car added successfully! Your car ID is: ' + result._id);
+						window.location.href = '../';
                     } else {
                         const error = await response.json();
                         alert('Adding car failed: ' + (error.message || 'Unknown error'));

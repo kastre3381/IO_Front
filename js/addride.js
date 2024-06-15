@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         const result = await response.json();
                         alert('Trip added successfully! Your trip ID is: ' + result._id);
                         // Handle successful response
+						window.location.href = '../';
                     } else {
                         const error = await response.json();
                         alert('Adding trip failed: ' + (error.message || 'Unknown error'));

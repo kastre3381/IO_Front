@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 role : 'regular'
                 
             };
-            alert(JSON.stringify(formData));
             try {
                 const response = await fetch('http://localhost:9000/user', {
                     method: 'POST',
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     body: JSON.stringify(formData)
                 });
-                alert(response.body._id)
                 if (response.ok) {
                     const result = await response.json();
                     alert('Registration successful! Your user ID is: ' + result.newId);
