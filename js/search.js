@@ -129,11 +129,11 @@ async function reserveRide(tripID) {
         });
 
         if (response.ok) {
-            console.log(`Trip ${tripID} successfully reserved for user ${userId}`);
+            alert(`Trip ${tripID} successfully reserved`);
             return true;
         } else {
             const error = await response.json();
-            console.error('Error reserving trip:', error.message || 'Unknown error');
+            alert('Error reserving trip:', error.message || 'Unknown error');
             return false;
         }
     } catch (error) {

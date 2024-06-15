@@ -9,32 +9,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('IO_register_passwd').value;
 
             try {
-                const response = await fetch('http://localhost:9000/user', {
-                    method: 'GET',
+                const response = await fetch('http://localhost:9000/auth', {
+                    method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
-                    }
+                    },
+					body: JSON.stringify({
+						'email' : email,
+						'password' : password
+					})
                 });
 
                 if (response.ok) {
-                    const users = await response.json();
-                    const user = users.find(user => user.email === email && user.password === password);
-
+                    const user = await response.json();
                     if (user) {
-                        // Zalogowano użytkownika - przekieruj na stronę loggedinmain.html
                         alert('Zalogowano pomyślnie!');
-                        // Zapamiętaj identyfikator użytkownika w lokalnym magazynie
                         localStorage.setItem('userId', user._id);
-                        alert(localStorage.getItem('userId'));
-                        alert('Zalogowano pomyślnie! Twój identyfikator użytkownika to: ' + user._id);  
-                        // Przekierowanie na stronę loggedinmain.html
                         window.location.href = '../';
-                    } else {
-                        alert('Nieprawidłowy e-mail lub hasło.');
                     }
-                } else {
-                    alert('Wystąpił błąd podczas logowania.');
-                }
+                } else if (response.status == 400 || response.status == 403) {
+					alert('Nieprawidłowy e-mail lub hasło.');
+				}
             } catch (error) {
                 console.error('Error:', error);
                 alert('Wystąpił błąd podczas logowania. Spróbuj ponownie później.');
