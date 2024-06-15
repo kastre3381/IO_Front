@@ -8,50 +8,13 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/trpis.css">
         <title>Wyszukiwanie przejazdów</title>
         <link rel="icon" href="../images/icons/IO_icon.svg" type="image/x-icon"/>
     </head>
     <body class="bg-dark container-fluid text-white d-flex flex-column vh-100" >
         <br>
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li>
-                <a href="../" class="nav-link px-2 text-white">
-                  <img src="../images/icons/IO_icon.svg" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
-                  Strona domowa
-                </a>
-              </li>
-              <!-- <li> <img src="../images/icons/IO_search.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 80px; height: auto;"></li>
-              <li><a href="/html/search.html" class="nav-link px-2 text-white">Szukaj</a></li> -->
-              <li>
-                <a href="../search" class="nav-link px-2 text-white">
-                  <img src="../images/icons/IO_add.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
-                  Wyszukaj przejazd
-                </a>
-              </li>
-              <li>
-                <a href="../about" class="nav-link px-2 text-white">
-                  <img src="../images/icons/IO_about.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
-                  O nas
-                </a>
-              </li>
-            </ul>
-    
-    
-            <div class="text-end">
-              <button type="button" class="btn btn-outline-light me-2" onclick="logout()">Wyloguj się</button>
-              <img src="../images/icons/profile_picture.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 80px; height: auto;" id="IO_img_user_profile_image"></li>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Konto
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="../myinfo">Moje informacje</a>
-                  <a class="dropdown-item" href="../settings">Ustawienia</a>
-                </div>
-              </div>
-            </div>
-        </div>
+        <div id="navbarContent"></div>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <div class="container">
         <div class="row">
@@ -63,7 +26,7 @@
                 <!-- BEGIN FILTERS -->
                 
                 <div class="col-md-3">
-                  <form method="POST" action="modifySearch">
+                    <form method="GET">
                     <h2 class="grid-title"><i class="fa fa-filter"></i> Filtry</h2>
                     <hr>
                     
@@ -111,7 +74,7 @@
                     <hr>
                     <!-- BEGIN SEARCH INPUT -->
                     <div class="container bg-light mt-3 rounded border border-dark text-dark" style="width: 50vw;">
-                    <form method="POST" action="/searchform">
+                    <form method="GET" id="addRideForm">
                       <div class="row">
                         <div class="col mb-4 mt-4">
                           <div class="form-group">
@@ -119,7 +82,7 @@
                             <input type="text" class="form-control" id="IO_start" placeholder="Wpisz, aby wyszukać">
                           </div>
                           <div class="form-group">
-                              <select multiple class="form-control" id="depature" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz punkt startowy')">
+                              <select multiple class="form-control" id="depature" >
                               <option value="Warszawa">Warszawa</option>
                               <option value="Kraków">Kraków</option>
                               <option value="Łódź">Łódź</option>
@@ -178,7 +141,7 @@
                           <input type="text" class="form-control" id="IO_end" placeholder="Wpisz, aby wyszukać">
                       </div>
                         <div class="form-group">
-                            <select multiple class="form-control" id="destination" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz punkt startowy')">
+                            <select multiple class="form-control" id="destination">
                             <option value="Warszawa">Warszawa</option>
                             <option value="Kraków">Kraków</option>
                             <option value="Łódź">Łódź</option>
@@ -233,11 +196,11 @@
             
                     <div class="col mb-4 mt-4">
                       <label for="date" class="form-label">Dzień wyjazdu</label>
-                      <input type="date" class="form-control" id="date" min="" required>
+                      <input type="date" class="form-control" id="date" min="" >
                   </div>
                   <div class="col mb-4 mt-4">
                       <label for="time" class="form-label">Godzina wyjazdu</label>
-                      <input type="time" class="form-control" id="time" min="" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz późniejszą godzinę')">
+                      <input type="time" class="form-control" id="time" min="" oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz późniejszą godzinę')">
                   </div>
                         <div class="col mb-4 mt-4">
                             <input type="range" class="form-range" id="passengers" placeholder="Liczba pasażerów" min="1" max="8" value="1" onchange="liczba_pasazerow_slider()" required>
@@ -283,90 +246,11 @@
                     
                     <br>
                     <!-- BEGIN TABLE RESULT -->
-                    <div class="table-responsive">
-                    <table class="table table-hover">
-                        <tbody><tr>
-                        <td class="number text-center">1</td>
-                        <td class="image"><img src="https://www.bootdey.com/image/100x100/FF8C00" alt=""></td>
-                        <td class="product"><strong>Przejazd 1</strong><br>To jest opis.</td>
-                        <td class="rate text-right"><span>${getStars(ride.rating)}</span></td>
-                        <td class="price text-right">$350</td>
-                        <td class="action text-right" style="position: relative;">
-                          <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td class="number text-center">2</td>
-                        <td class="image"><img src="https://www.bootdey.com/image/100x100/5F9EA0" alt=""></td>
-                        <td class="product"><strong>Przejazd 2</strong><br>To jest opis.</td>
-                        <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></span></td>
-                        <td class="price text-right">$1,050</td>
-                        <td class="action text-right" style="position: relative;">
-                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td class="number text-center">3</td>
-                        <td class="image"><img src="https://www.bootdey.com/image/100x100" alt=""></td>
-                        <td class="product"><strong>Przejazd 3</strong><br>To jest opis.</td>
-                        <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></span></td>
-                        <td class="price text-right">$550</td>
-                        <td class="action text-right" style="position: relative;">
-                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td class="number text-center">4</td>
-                        <td class="image"><img src="https://www.bootdey.com/image/100x100/8A2BE2" alt=""></td>
-                        <td class="product"><strong>Przejazd 4</strong><br>To jest opis.</td>
-                        <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span></td>
-                        <td class="price text-right">$330</td>
-                        <td class="action text-right" style="position: relative;">
-                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td class="number text-center">5</td>
-                        <td class="image"><img src="https://www.bootdey.com/image/100x100" alt=""></td>
-                        <td class="product"><strong>Przejazd 5</strong><br>To jest opis.</td>
-                        <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></td>
-                        <td class="price text-right">$540</td>
-                        <td class="action text-right" style="position: relative;">
-                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td class="number text-center">6</td>
-                        <td class="image"><img src="https://www.bootdey.com/image/100x100/6495ED" alt=""></td>
-                        <td class="product"><strong>Przejazd 6</strong><br>To jest opis.</td>
-                        <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></td>
-                        <td class="price text-right">$870</td>
-                        <td class="action text-right" style="position: relative;">
-                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td class="number text-center">7</td>
-                        <td class="image"><img src="https://www.bootdey.com/image/100x100/DC143C" alt=""></td>
-                        <td class="product"><strong>Przejazd 7</strong><br>To jest opis.</td>
-                        <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></span></td>
-                        <td class="price text-right">$620</td>
-                        <td class="action text-right" style="position: relative;">
-                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td class="number text-center">8</td>
-                        <td class="image"><img src="https://www.bootdey.com/image/100x100/9932CC" alt=""></td>
-                        <td class="product"><strong>Przejazd 8</strong><br>To jest opis.</td>
-                        <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></td>
-                        <td class="price text-right">$1,550</td>
-                        <td class="action text-right" style="position: relative;">
-                            <button class="btn btn-primary" style="position: absolute; bottom: 30px; right: 30px" onclick="reserveRide()">Zarezerwuj</button>
-                        </td>
-                        </tr>
-                    </tbody></table>
-                    </div>
+                    <table class="table">
+                        <tbody>
+                            <!-- zawartość tbody -->
+                        </tbody>
+                    </table>
                     <!-- END TABLE RESULT -->
                     
                     <!-- BEGIN PAGINATION -->
@@ -395,6 +279,6 @@
         </div>
       </div>
         <script src="../js/main.js"></script>
-        <script src="../js/search_or_add_ride.js"></script>
+        <script src="../js/search.js"></script>
     </body>
     </html>

@@ -11,56 +11,25 @@
     <title>Strona główna</title>
     <link rel="icon" href="../images/icons/IO_icon.svg" type="image/x-icon"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
-
+    <script src=../js/addride.js></script>
+    <script src="../js/ridecars.js"></script>
 </head>
 <body class="bg-dark container-fluid" >
     <br>
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li>
-            <a href="../" class="nav-link px-2 text-white">
-              <img src="../images/icons/IO_icon.svg" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
-              Strona domowa
-            </a>
-          </li>
-          <li>
-            <a href="../search/" class="nav-link px-2 text-white">
-              <img src="../images/icons/IO_add.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
-              Wyszukaj przejazd
-            </a>
-          </li>
-          <li>
-            <a href="../about/" class="nav-link px-2 text-white">
-              <img src="../images/icons/IO_about.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
-              O nas
-            </a>
-          </li>
-        </ul>
-
-
-        <div class="text-end">
-          <a href="../login/" class="btn btn-outline-light me-2">Zaloguj się</a>
-          <a href="../register/" class="btn btn-warning">Utwórz konto</a>
-        </div>
-        </div>
-    </div>
+    <div id="navbarContent"></div>
 
     
     <br><br>
     
-
-    <form action="add_ride" method="POST">
-    <div class="container mt-5 text-light align-center">
-        <div class="form-group">
-            <label for="IO_add_ride_car">Pojazd</label>
-            <select class="form-control" id="car">
-              <option>1</option>
-              <option>2</option>    
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
+    <form id="addRideForm" method="POST">
+        <div class="container mt-5 text-light align-center">
+            <button id="showVehiclesButton" class="btn btn-primary">Show Vehicles</button>
+            <div class="form-group">
+                <label for="IO_add_ride_car">Pojazd</label>
+                <select class="form-control" id="car">
+                    <!-- Options will be dynamically populated here -->
+                </select>
+            </div>
         <br>
         <div class="row">
             <div class="col">
@@ -81,7 +50,7 @@
                     <input type="text" class="form-control" id="IO_start" placeholder="Wpisz, aby wyszukać">
                 </div>
                 <div class="form-group">
-                    <select multiple class="form-control" id="depature" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz punkt startowy')">
+                    <select multiple class="form-control" id="depature">
                     <option value="Warszawa">Warszawa</option>
                     <option value="Kraków">Kraków</option>
                     <option value="Łódź">Łódź</option>
@@ -139,7 +108,7 @@
                     <input type="text" class="form-control" id="IO_end" placeholder="Wpisz, aby wyszukać">
                 </div>
                 <div class="form-group">
-                    <select multiple class="form-control" id="destination" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Wybierz punkt docelowy')">
+                    <select multiple class="form-control" id="destination" >
                     <option value="Warszawa">Warszawa</option>
                     <option value="Kraków">Kraków</option>
                     <option value="Łódź">Łódź</option>
