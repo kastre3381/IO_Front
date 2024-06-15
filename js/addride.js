@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 };
 
                 try {
-                    const response = await fetch('http://localhost:9000/trip', {
+                    const response = await fetch('http://jakw.ovh:9000/trip', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
