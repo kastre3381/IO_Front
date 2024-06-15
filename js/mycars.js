@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     async function fetchCarsByUserId(userId) {
-        const response = await fetch(`http://localhost:9000/cars/${userId}`);
+        const response = await fetch(`http://jakw.ovh:9000/cars/${userId}`);
 
         if (!response.ok) {
             const error = await response.json();

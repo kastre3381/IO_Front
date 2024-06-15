@@ -19,7 +19,7 @@ function fetchInfo(userId) {
         var xhr = new XMLHttpRequest();
         localStorage.setItem('userId', userId);
         // Definiowanie adresu URL endpointu
-        var url = 'http://localhost:9000/user/' + userId; // Użyj poprawnego adresu URL
+        var url = 'http://jakw.ovh:9000/user/' + userId; // Użyj poprawnego adresu URL
 
         // Konfiguracja żądania
         xhr.open('GET', url, true);

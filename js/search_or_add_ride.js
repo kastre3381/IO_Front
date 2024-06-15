@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const searchInput1 = document.getElementById('IO_start');
     const select1 = document.getElementById('depature');
