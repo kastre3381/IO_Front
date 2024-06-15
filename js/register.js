@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             alert(JSON.stringify(formData));
             try {
-                const response = await fetch('http://localhost:9000/user', {
+                const response = await fetch('http://jakw.ovh:9000/user', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

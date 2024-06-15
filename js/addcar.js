@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     }
                 };
                 try {
-                    const response = await fetch('http://localhost:9000/car', {
+                    const response = await fetch('http://jakw.ovh:9000/car', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ function formatDate(dateString) {
 function fetchInfo(userId) {
     return new Promise((resolve, reject) => {
         var xhr = new XMLHttpRequest();
-        var url = 'http://localhost:9000/user/' + userId;
+        var url = 'http://jakw.ovh:9000/user/' + userId;
 
         xhr.open('GET', url, true);
 

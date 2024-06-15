@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('IO_register_passwd').value;
 
             try {
-                const response = await fetch('http://localhost:9000/user', {
+                const response = await fetch('http://jakw.ovh:9000/user', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'

@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             try {
                 // Przygotowanie parametrów URL
                 const queryString = new URLSearchParams(formData).toString();
-                const url = `http://localhost:9000/v2/trip?${queryString}`;
+                const url = `http://jakw.ovh:9000/v2/trip?${queryString}`;
 
                 // Wywołanie fetch z metodą GET
                 const response = await fetch(url, {
@@ -120,7 +120,7 @@ async function reserveRide(tripID) {
         };
 
         // Wywołaj endpoint PUT `/trip/:tripID` w serwerze
-        const response = await fetch(`http://localhost:9000/trip/${tripID}`, {
+        const response = await fetch(`http://jakw.ovh:9000/trip/${tripID}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -145,7 +145,7 @@ async function reserveRide(tripID) {
 // Funkcja do pobierania szczegółów tripa po ID
 async function fetchTripById(tripID) {
     try {
-        const response = await fetch(`http://localhost:9000/trips/${tripID}`, {
+        const response = await fetch(`http://jakw.ovh:9000/trips/${tripID}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
