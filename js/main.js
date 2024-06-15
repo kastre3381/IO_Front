@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li>
-            <a id="homeLink" class="nav-link px-2 text-white" style="cursor: pointer;">
+            <a href="/" id="homeLink" class="nav-link px-2 text-white" style="cursor: pointer;">
                 <img src="../images/icons/IO_icon.svg" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
                 Strona domowa
             </a>
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </a>
         </li>
         <li>
-            <a href="about.html" class="nav-link px-2 text-white">
+            <a href="/about/" class="nav-link px-2 text-white">
                 <img src="../images/icons/IO_about.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
                 O nas
             </a>
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <a id="homeLink" class="nav-link px-2 text-white" style="cursor: pointer;">
+              <a href="/" id="homeLink" class="nav-link px-2 text-white" style="cursor: pointer;">
                 <img src="../images/icons/IO_icon.svg" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
                 Strona domowa
             </a>
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </a>
             </li>
             <li>
-              <a href="/about" class="nav-link px-2 text-white">
+              <a href="/about/" class="nav-link px-2 text-white">
                 <img src="../images/icons/IO_about.png" class="img-fluid img-thumbnail" alt="Logo" style="width: 40px; height: auto;">
                 O nas
               </a>

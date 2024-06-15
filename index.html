@@ -26,7 +26,7 @@
                 <input type="text" class="form-control" id="IO_start" placeholder="Wpisz, aby wyszukać">
               </div>
               <div class="form-group">
-                  <select multiple class="form-control" id="depature" >
+                  <select multiple class="form-control" id="depature" onclick="(()=>{document.getElementById('IO_start').value = document.getElementById('depature').value})()">
                   <option value="Warszawa">Warszawa</option>
                   <option value="Kraków">Kraków</option>
                   <option value="Łódź">Łódź</option>
@@ -85,7 +85,7 @@
               <input type="text" class="form-control" id="IO_end" placeholder="Wpisz, aby wyszukać">
           </div>
             <div class="form-group">
-                <select multiple class="form-control" id="destination">
+                <select multiple class="form-control" id="destination" onclick="(()=>{document.getElementById('IO_end').value = document.getElementById('destination').value})()">
                 <option value="Warszawa">Warszawa</option>
                 <option value="Kraków">Kraków</option>
                 <option value="Łódź">Łódź</option>

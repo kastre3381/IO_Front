@@ -70,7 +70,7 @@ function formatDate(dateString) {
 function fetchInfo(userId) {
     return new Promise((resolve, reject) => {
         var xhr = new XMLHttpRequest();
-        var url = 'http://localhost:9000/user/' + userId;
+        var url = 'http://jakw.ovh:9000/user/' + userId;
 
         xhr.open('GET', url, true);
 
